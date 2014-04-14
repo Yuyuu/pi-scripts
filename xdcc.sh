@@ -5,8 +5,10 @@ LISTS_DIR=$ROOT_DIR/lists
 if [ ! -e $LISTS_DIR ] || [ ! -d $LISTS_DIR ] ; then
 	echo "Creating dir : $LISTS_DIR"
 	mkdir -p $LISTS_DIR
-else
-	cp $ROOT_DIR/xdcc-pi.log $ROOT_DIR/`date "+%d_%m_%y"`.log
+fi
+
+if [ -f $ROOT_DIR/xdcc-pi.log ] ; then
+	mv $ROOT_DIR/xdcc-pi.log $ROOT_DIR/`date "+%d_%m_%y"`.log
 fi
 
 if [ -e $ROOT_DIR/xdcc-pi.jar ] ; then
