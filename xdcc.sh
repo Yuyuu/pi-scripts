@@ -1,5 +1,5 @@
 #!/bin/sh
-ROOT_DIR=/home/pi/dev/xdcc
+ROOT_DIR=/home/pi/prod/xdcc
 LISTS_DIR=$ROOT_DIR/lists
 
 if [ ! -e $LISTS_DIR ] || [ ! -d $LISTS_DIR ] ; then
@@ -8,7 +8,7 @@ if [ ! -e $LISTS_DIR ] || [ ! -d $LISTS_DIR ] ; then
 fi
 
 if [ -f $ROOT_DIR/xdcc-pi.log ] ; then
-	mv $ROOT_DIR/xdcc-pi.log $ROOT_DIR/`date "+%d_%m_%y"`.log
+	mv $ROOT_DIR/xdcc-pi.log $ROOT_DIR/`date "+%d_%m_%y_%H_%M_%S"`.log
 fi
 
 if [ -e $ROOT_DIR/xdcc-pi.jar ] ; then
