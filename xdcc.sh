@@ -3,6 +3,11 @@ ROOT_DIR=/home/pi/prod/xdcc
 LISTS_DIR=$ROOT_DIR/lists
 LOGS_DIR=$ROOT_DIR/logs
 
+if [ -z $1 ] ; then
+	echo "No version specified"
+	exit
+fi
+
 if [ ! -e $LISTS_DIR ] || [ ! -d $LISTS_DIR ] ; then
 	echo "Creating dir : $LISTS_DIR"
 	mkdir -p $LISTS_DIR
@@ -18,7 +23,9 @@ if [ -f $ROOT_DIR/xdcc-pi.log ] ; then
 	mv $ROOT_DIR/xdcc-pi.log $LOGS_DIR/`date "+%d_%m_%y_%H_%M_%S"`.log
 fi
 
-if [ -e $ROOT_DIR/xdcc-pi.jar ] ; then
-	echo "Executing jar file"
-	java -jar $ROOT_DIR/xdcc-pi.jar 8089 &
+if [ -e $ROOT_DIR/xdcc-pi-$1.jar ] ; then
+	echo "Starting API version $1"
+	java -jar $ROOT_DIR/xdcc-pi-$1.jar 8089 &
+else
+	echo "API version $1 could no be found"
 fi
