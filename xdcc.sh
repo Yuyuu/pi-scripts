@@ -18,7 +18,7 @@ if [ ! -e $VERSION_DIR ] || [ ! -d $VERSION_DIR ] ; then
 fi
 
 if [ ! -e $LOGS_DIR ] || [ ! -d $LOGS_DIR ] ; then
-        echo "Creating dir: $LOG_DIR"
+        echo "Creating dir: $LOGS_DIR"
         mkdir -p $LOGS_DIR
 fi
 
