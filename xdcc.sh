@@ -22,9 +22,9 @@ if [ ! -e $LOGS_DIR ] || [ ! -d $LOGS_DIR ] ; then
         mkdir -p $LOGS_DIR
 fi
 
-if [ -f $VERSION_DIR/xdcc-pi.log ] ; then
+if [ -f $VERSION_DIR/xdcc-api.log ] ; then
 	echo "Archiving $VERSION_DIR/xdcc-pi.log to $LOGS_DIR"
-	mv $VERSION_DIR/xdcc-pi.log $LOGS_DIR/`date "+%d_%m_%y_%H_%M_%S"`.log
+	mv $VERSION_DIR/xdcc-api.log $LOGS_DIR/`date "+%d_%m_%y_%H_%M_%S"`.log
 fi
 
 if [ -f $VERSION_DIR/access.log ] ; then
